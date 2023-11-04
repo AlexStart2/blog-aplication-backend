@@ -10,10 +10,6 @@ const { google } = require('googleapis');
 
 const app = express();
 
-const corsOptions = {
-  origin: 'http://localhost:3000' // ******************************* Aici o sa trebuiasca de modificat la sfarsit
-  //domeniu:'https://....'
-};
 
 app.use(cors());
 
