@@ -166,7 +166,17 @@ app.get("/get-all-articles", async (req, res) => {
   }
 });
 
-
+app.delete('/api/delete-article', async (req, res) => {
+  try {
+    const articleId = req.body.articleId;
+    console.log(articleId);
+    // Use Mongoose to find and delete the article by its ID
+    await ArticleModel.findByIdAndDelete(articleId);
+    res.send(JSON.stringify('Article deleted'));
+  } catch (error) {
+    res.status(500).send(JSON.stringify('Error deleting the article'));
+  }
+});
 
 
 
