@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }));
 
 
 
-mongoose.connect("mongodb+srv://alexgheorghiu065:dMqd3cnV1zASFNc7@cluster0.yvej5i2.mongodb.net/Blog-aplication?retryWrites=true&w=majority");
+mongoose.connect(env("DATABASE_URL"));
 
 const db = mongoose.connection;
 
